@@ -57,7 +57,7 @@ public class DishController {
     {
         log.info("菜品的批量删除 :{}" ,ids);
         dishService.deleteBatch(ids);
-        //忘了给前端返回结果！！！！
+        //忘了给前端返 回结果！！！！
         return Result.success();
     }
 
