@@ -157,6 +157,7 @@ public class DishServiceImpl implements DishService {
         //封装数据
         BeanUtils.copyProperties(dish , dishVO);
         dishVO.setFlavors(dishFlavors);
+
         return dishVO;
     }
 }
