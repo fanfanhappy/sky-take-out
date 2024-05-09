@@ -10,6 +10,8 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 /**
  * @projectName: sky-take-out
  * @package: com.sky.mapper
@@ -50,4 +52,10 @@ public interface DishMapper {
      */
     @Delete("delete from dish where id = #{id}")
     void deleteById(Long id);
+
+    /**
+     * 批量删除优化
+     * @param ids
+     */
+    void deleteByIds(List<Long> ids);
 }
