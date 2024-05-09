@@ -149,7 +149,7 @@ public class DishServiceImpl implements DishService {
     @Override
     public DishVO getByIdWithFlavor(Long id) {
         DishVO dishVO = new DishVO();
-        //根据id查询   dish
+        //根据id查询    dish
         Dish dish = dishMapper.getById(id);
         //根据dishId查询口味
         List<DishFlavor> dishFlavors = dishFlavorMapper.getFlavorById(id);
