@@ -124,7 +124,39 @@ public class DishServiceImpl implements DishService {
         //批量删除优化
         dishMapper.deleteByIds(ids);
         dishFlavorMapper.deleteByIds(ids);
+    }
 
+    /**
+     * 菜品的起售，禁售
+     * @param status
+     * @param id
+     */
+    @Override
+    public void startOrStop(Integer status, Long id) {
+        //封装为实体类
+        Dish dish = new Dish();
+        dish.setId(id);
+        dish.setStatus(status);
 
+        dishMapper.update(dish);
+    }
+
+    /**
+     * 根据id查询菜品
+     * @param id
+     * @return
+     */
+    @Override
+    public DishVO getByIdWithFlavor(Long id) {
+        DishVO dishVO = new DishVO();
+        //根据id查询dish
+        Dish dish = dishMapper.getById(id);
+        //根据dishId查询口味
+        List<DishFlavor> dishFlavors = dishFlavorMapper.getFlavorById(id);
+
+        //封装数据
+        BeanUtils.copyProperties(dish , dishVO);
+        dishVO.setFlavors(dishFlavors);
+        return dishVO;
     }
 }
