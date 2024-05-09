@@ -41,13 +41,13 @@ public class CategoryServiceImpl implements CategoryService {
         //设置其他属性
         //设置默认分类状态，默认0为禁用
         category.setStatus(0);
-        //设置分类管理的创建和更新时间
-        category.setCreateTime(LocalDateTime.now());
-        category.setUpdateTime(LocalDateTime.now());
-
-        //设置创建和更新人的id
-        category.setCreateUser(BaseContext.getCurrentId());
-        category.setUpdateUser(BaseContext.getCurrentId());
+//        //设置分类管理的创建和更新时间
+//        category.setCreateTime(LocalDateTime.now());
+//        category.setUpdateTime(LocalDateTime.now());
+//
+//        //设置创建和更新人的id
+//        category.setCreateUser(BaseContext.getCurrentId());
+//        category.setUpdateUser(BaseContext.getCurrentId());
 
         //新增
         categoryMapper.save(category);
@@ -97,9 +97,9 @@ public class CategoryServiceImpl implements CategoryService {
 
         //设置其他属性
         //设置更新时间
-        category.setUpdateTime(LocalDateTime.now());
-        //设置更新操作人id
-        category.setUpdateUser(BaseContext.getCurrentId());
+//        category.setUpdateTime(LocalDateTime.now());
+//        //设置更新操作人id
+//        category.setUpdateUser(BaseContext.getCurrentId());
 
         //更新
         categoryMapper.update(category);
