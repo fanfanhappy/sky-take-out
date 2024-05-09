@@ -37,7 +37,7 @@ public class DishController {
     @ApiOperation("新增菜品")
     public Result save(@RequestBody DishDTO dishDTO)
     {
-        log.info("新增菜品");
+        log.info("新 增菜品");
         dishService.saveWithFlavor(dishDTO);
         return null;
     }
