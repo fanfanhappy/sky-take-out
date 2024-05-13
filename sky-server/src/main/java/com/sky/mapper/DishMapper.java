@@ -63,4 +63,7 @@ public interface DishMapper {
     void update(Dish dish);
 
     DishVO getByIdWithFlavor(Long id);
+
+    @Select("select * from dish where category_id = #{catId}")
+    List<Dish> getDishsByCatId(Long catId);
 }

@@ -56,14 +56,14 @@ public class DishServiceImpl implements DishService {
         dishMapper.insert(dish);
 
         //获取insert插入后的主键值
-        Long id = dish.getId();
+        Long dishId = dish.getId();
         List<DishFlavor> flavors = dishDTO.getFlavors();
         if(flavors != null && flavors.size() > 0)
         {
             //将菜品的主键值赋给口味
             for (DishFlavor dishFlavor :
                     flavors) {
-                dishFlavor.setDishId(id);
+                dishFlavor.setDishId(dishId);
             }
 
             dishFlavorMapper.insertBatch(flavors);
@@ -189,5 +189,17 @@ public class DishServiceImpl implements DishService {
             //批量插入口味
             dishFlavorMapper.insertBatch(flavors);
         }
+    }
+
+
+    /**
+     * 根据分类id查询菜品
+     * @param catId
+     * @return
+     */
+    @Override
+    public List<Dish> getDishsByCatId(Long catId) {
+        List<Dish> dishes = dishMapper.getDishsByCatId(catId);
+        return dishes;
     }
 }
