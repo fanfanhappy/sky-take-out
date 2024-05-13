@@ -149,7 +149,7 @@ public class SetmealServiceImpl implements SetmealService {
      */
     @Override
     public void update(SetmealDTO setmealDTO) {
-        //先更新当前detmeal实体信息
+        //先更新当前detmeal 实体信息
         Setmeal setmeal = new Setmeal();
         BeanUtils.copyProperties(setmealDTO , setmeal);
         setmealMapper.update(setmeal);
