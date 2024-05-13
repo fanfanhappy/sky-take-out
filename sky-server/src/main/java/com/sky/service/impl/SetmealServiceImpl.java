@@ -133,7 +133,7 @@ public class SetmealServiceImpl implements SetmealService {
             Setmeal setmeal = setmealMapper.getById(id);
             if(setmeal.getStatus() == StatusConstant.ENABLE)
             {
-                throw new DeletionNotAllowedException(MessageConstant.SETMEAL_ENABLE_FAILED);
+                throw new DeletionNotAllowedException(MessageConstant.SETMEAL_ON_SALE);
             }
         }
         //可以删除
