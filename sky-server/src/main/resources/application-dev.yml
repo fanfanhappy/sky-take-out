@@ -20,5 +20,5 @@ sky:
     database: 0
 
   wechat:
-    appid: 1
+    appid: 12
     secret: 1
