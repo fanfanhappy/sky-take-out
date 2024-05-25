@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * @projectName: sky-take-out
- * @package: com.sky.controller.admin
+ * @package: com.sky.controller.user
  * @className: ShopController
  * @author: 姬紫衣
  * @description: TODO
