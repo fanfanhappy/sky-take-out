@@ -1,6 +1,7 @@
 package com.sky.controller.user;
 
 import com.sky.dto.ShoppingCartDTO;
+import com.sky.entity.ShoppingCart;
 import com.sky.result.Result;
 import com.sky.service.ShopingCartService;
 import io.swagger.annotations.Api;
@@ -8,6 +9,8 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @projectName: sky-take-out
@@ -26,7 +29,7 @@ import org.springframework.web.bind.annotation.*;
 public class ShoppingCarController {
 
     @Autowired
-    private ShopingCartService shopingCartService;
+    public ShopingCartService shopingCartService;
     @PostMapping("/add")
     @ApiOperation("添加购物车")
     private Result add(@RequestBody ShoppingCartDTO shoppingCartDTO)
@@ -34,5 +37,14 @@ public class ShoppingCarController {
         log.info("添加购物车，{}" ,shoppingCartDTO);
         shopingCartService.addShopingCart(shoppingCartDTO);
         return Result.success();
+    }
+
+    @GetMapping("/list")
+    @ApiOperation("查看购物车")
+    public Result<List<ShoppingCart>> list()
+    {
+        log.info("展示购物车");
+        List<ShoppingCart> list = shopingCartService.shouwShoppingCart();
+        return Result.success(list);
     }
 }

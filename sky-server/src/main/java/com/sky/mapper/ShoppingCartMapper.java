@@ -27,5 +27,7 @@ public interface ShoppingCartMapper
      * @param shoppingCart
      */
     void insert(ShoppingCart shoppingCart);
+
+    List<ShoppingCart> listAll(Long currentId);
 }
 

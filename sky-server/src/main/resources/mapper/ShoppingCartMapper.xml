@@ -30,6 +30,9 @@
             </if>
         </where>
     </select>
+    <select id="listAll" resultType="com.sky.entity.ShoppingCart">
+        select * from shopping_cart where user_id = #{currentId}
+    </select>
 
 
 </mapper>

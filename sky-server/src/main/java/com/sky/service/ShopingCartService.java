@@ -1,6 +1,9 @@
 package com.sky.service;
 
 import com.sky.dto.ShoppingCartDTO;
+import com.sky.entity.ShoppingCart;
+
+import java.util.List;
 
 /**
  * @projectName: sky-take-out
@@ -14,4 +17,11 @@ import com.sky.dto.ShoppingCartDTO;
 public interface ShopingCartService {
 
     void addShopingCart(ShoppingCartDTO shoppingCartDTO);
+
+    /**
+     * 查看购物车
+     * @return
+     */
+    List<ShoppingCart> shouwShoppingCart();
+
 }
