@@ -87,4 +87,10 @@ public class ShoppingCartServiceImpl implements ShopingCartService {
         List<ShoppingCart> list = shoppingCartMapper.listAll(currentId);
         return list;
     }
+
+    @Override
+    public void clean() {
+        Long currentId = BaseContext.getCurrentId();
+        shoppingCartMapper.deleteByUserId(currentId);
+    }
 }

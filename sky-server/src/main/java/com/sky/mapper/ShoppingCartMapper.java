@@ -29,5 +29,11 @@ public interface ShoppingCartMapper
     void insert(ShoppingCart shoppingCart);
 
     List<ShoppingCart> listAll(Long currentId);
+
+    /**
+     * 根据用户id删除购物车信息
+     * @param currentId
+     */
+    void deleteByUserId(Long currentId);
 }
 

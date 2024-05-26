@@ -24,4 +24,9 @@ public interface ShopingCartService {
      */
     List<ShoppingCart> shouwShoppingCart();
 
+    /**
+     * 清空购物车
+     */
+    void clean();
+
 }
