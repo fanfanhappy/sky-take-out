@@ -11,6 +11,7 @@
     <update id="update">
         update shopping_cart set number = #{number} where id = #{id}
     </update>
+
     <delete id="deleteByUserId">
         delete from shopping_cart where user_id = #{currentId}
     </delete>
