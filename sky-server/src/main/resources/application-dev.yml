@@ -9,9 +9,9 @@ sky:
 
   alioss:
     endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5tEExfi52EQw4bxUrQkP
-    access-key-secret: 8RAdtAg9e9XGv2jD1vywuUuekJ6hfs
-    bucket-name: sky-take-outnew
+    access-key-id:
+    access-key-secret:
+    bucket-name:
 
   redis:
     host: localhost
@@ -20,5 +20,5 @@ sky:
     database: 0
 
   wechat:
-    appid: wxaaf9fa113acafa81
-    secret: b952e0506a33367eb97ac57c57c8c48b
+    appid:
+    secret:
